@@ -1,8 +1,8 @@
 Knwl    = require 'knwl.js'
 knwlSync    = new Knwl 'german'
 Entity = require './Entity'
-knwlSync.register 'money', require '../../../node_modules/knwl.js/experimental_plugins/money'
-knwlSync.register 'ratios', require '../../../node_modules/knwl.js/experimental_plugins/ratios'
+knwlSync.register 'money', require '../../node_modules/knwl.js/experimental_plugins/money'
+knwlSync.register 'ratios', require '../../node_modules/knwl.js/experimental_plugins/ratios'
 
 knwlEntities = (text) ->
     new Promise (resolve) ->
