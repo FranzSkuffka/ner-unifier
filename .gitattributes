@@ -1,0 +1,2 @@
+secretfile filter=git-crypt diff=git-crypt
+API_keys/* filter=git-crypt diff=git-crypt
