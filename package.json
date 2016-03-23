@@ -1,0 +1,20 @@
+{
+  "name": "ner-unifier",
+  "version": "0.0.1",
+  "description": "A unified interface for named entity recognition libraries and services",
+  "main": "lib/index",
+  "scripts": {
+    "test": "coffee test.coffee"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github.com/FranzSkuffka/ner-unifier.git"
+  },
+  "keywords": [
+    "nlp",
+    "ner",
+    "unification"
+  ],
+  "author": "Jan Wirth <jottenwe@gmail.com>",
+  "license": "MIT"
+}
