@@ -2,7 +2,12 @@ Promise  = require 'bluebird'
 services = require './services/index'
 _        = require 'underscore'
 
-ner = (text, apiKeys) =>
+ner = (text, apiKeys, opts) =>
+
+    defaults =
+        language: 'english'
+
+    opts = _.extend defaults, opts
 
     # sort entities into lists
     sortEntities = (allEntities) ->
@@ -25,9 +30,9 @@ ner = (text, apiKeys) =>
     extractions = []
     for name, service of services
         if apiKeys[name]
-            extractions.push(service text, apiKeys[name])
+            extractions.push(service text, apiKeys[name], opts)
         else
-            extractions.push(service text)
+            extractions.push(service text, opts)
 
     # join api results
     Promise.all(extractions).then (results) ->

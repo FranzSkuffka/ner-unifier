@@ -2,8 +2,8 @@ Entity  = require './Entity'
 Calais = require('calais').Calais
 mapEntityName = require './map'
 
-calaisEntities = (text, apiKey) ->
-    calais = new Calais(apiKey)
+calaisEntities = (text, apiKey, opts) ->
+    calais = new Calais apiKey, {language: opts.language}
     new Promise (resolve) ->
         calais.set('content', text)
         calais.fetch (err, result) ->

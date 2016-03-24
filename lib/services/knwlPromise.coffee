@@ -1,13 +1,13 @@
 mapEntityName = require './map'
 
 Knwl    = require 'knwl.js'
-knwlSync    = new Knwl 'german'
 Entity = require './Entity'
-knwlSync.register 'money', require '../../node_modules/knwl.js/experimental_plugins/money'
-knwlSync.register 'ratios', require '../../node_modules/knwl.js/experimental_plugins/ratios'
 
-knwlEntities = (text) ->
+knwlEntities = (text, opts) ->
     new Promise (resolve) ->
+        knwlSync    = new Knwl opts.language
+        knwlSync.register 'money', require '../../node_modules/knwl.js/experimental_plugins/money'
+        knwlSync.register 'ratios', require '../../node_modules/knwl.js/experimental_plugins/ratios'
         # load text into knwl
         knwlSync.init text
         # define results in outer scope
