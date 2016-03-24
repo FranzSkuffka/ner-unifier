@@ -1,3 +1,5 @@
+mapEntityName = require './map'
+
 Knwl    = require 'knwl.js'
 knwlSync    = new Knwl 'german'
 Entity = require './Entity'
@@ -13,19 +15,19 @@ knwlEntities = (text) ->
 
         # join and normalize results
         for money in knwlSync.get 'money'
-            results.push new Entity 'financialValue', money.value
+            results.push new Entity mapEntityName('financialValue'), money.value
 
         for ratio in knwlSync.get 'ratios'
-            results.push new Entity 'probability', ratio.percentileValue
+            results.push new Entity mapEntityName('probability'), ratio.percentileValue
 
         for phone in knwlSync.get 'phones'
-            results.push new Entity 'phoneNumber', phone.phone
+            results.push new Entity mapEntityName('phoneNumber'), phone.phone
 
         for email in knwlSync.get 'emails'
             if email.preview?
                 meta =
                     preview:  email.preview
-            results.push new Entity 'emailAddress', email.address, meta
+            results.push new Entity mapEntityName('emailAddress'), email.address, meta
         resolve results
 
 

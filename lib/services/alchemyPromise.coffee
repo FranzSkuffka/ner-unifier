@@ -1,16 +1,9 @@
 Entity  = require './Entity'
 Alchemy = require './alchemy'
+mapEntityName = require './map'
 
 alchemyEntities = (text, apiKey) ->
     alchemy = new Alchemy(apiKey)
-    entityMap =
-        Person: 'personName'
-        Company: 'companyName'
-    mapEntityName = (name) =>
-        if entityMap[name]?
-            entityMap[name]
-        else
-            name.toLowerCase()
     new Promise (resolve) ->
         alchemy.entities "text", text, {'language': 'german'}, (res) ->
             results = []
