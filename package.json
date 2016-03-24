@@ -16,5 +16,9 @@
     "unification"
   ],
   "author": "Jan Wirth <jottenwe@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "bluebird": "^3.3.4",
+    "knwl.js": "github:franzskuffka/knwl.js"
+  }
 }
