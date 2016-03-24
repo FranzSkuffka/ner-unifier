@@ -20,6 +20,7 @@
   "dependencies": {
     "bluebird": "^3.3.4",
     "calais": "github:gedaiu/node-calais#1ca836a",
-    "knwl.js": "github:franzskuffka/knwl.js"
+    "knwl.js": "github:franzskuffka/knwl.js",
+    "underscore": "^1.8.3"
   }
 }
