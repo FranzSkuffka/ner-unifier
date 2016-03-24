@@ -1,5 +1,5 @@
 Promise  = require 'bluebird'
-services = require './services/index.coffee'
+services = require './services/index'
 _        = require 'underscore'
 
 ner = (text, apiKeys) =>

@@ -1,5 +1,5 @@
 Entity  = require './Entity'
-Alchemy = require './alchemy.js'
+Alchemy = require './alchemy'
 
 alchemyEntities = (text, apiKey) ->
     alchemy = new Alchemy(apiKey)

@@ -1,6 +1,6 @@
-alchemy = require './alchemyPromise.coffee'
-knwl = require './knwlPromise.coffee'
-calais = require './calaisPromise.coffee'
+alchemy = require './alchemyPromise'
+knwl = require './knwlPromise'
+calais = require './calaisPromise'
 
 module.exports =
     alchemy: alchemy
