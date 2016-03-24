@@ -1,6 +1,7 @@
 Promise = require 'bluebird'
 knwlEntities = require './services/knwlPromise.coffee'
 alchemyEntities = require './services/alchemyPromise.coffee'
+calaisEntities = require './services/calaisPromise.coffee'
 
 
 
@@ -21,9 +22,9 @@ ner = (text, apiKeys) =>
         throw new Error("input is #{ text }")
 
     # join api results
-    Promise.join knwlEntities(text), alchemyEntities(text, apiKeys.alchemy), (knwlRes, alchemyRes) ->
+    Promise.join knwlEntities(text), alchemyEntities(text, apiKeys.alchemy), calaisEntities(text, apiKeys.calais), (knwlRes, alchemyRes, calaisRes) ->
         new Promise (resolve) ->
-            entities = collectEntities(knwlRes.concat alchemyRes)
+            entities = collectEntities(knwlRes.concat alchemyRes, calaisRes)
             resolve entities
 
 

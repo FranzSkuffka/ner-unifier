@@ -19,6 +19,7 @@
   "license": "MIT",
   "dependencies": {
     "bluebird": "^3.3.4",
+    "calais": "github:gedaiu/node-calais#1ca836a",
     "knwl.js": "github:franzskuffka/knwl.js"
   }
 }
