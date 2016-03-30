@@ -1,4 +1,4 @@
-Entity  = require './Entity'
+Entity  = require '../Entity'
 Calais = require('calais').Calais
 mapEntityName = require './map'
 

@@ -1,7 +1,7 @@
 mapEntityName = require './map'
 
 Knwl    = require 'knwl.js'
-Entity = require './Entity'
+Entity = require '../Entity'
 
 knwlEntities = (text, opts) ->
     new Promise (resolve) ->

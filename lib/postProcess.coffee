@@ -1,5 +1,5 @@
 _ = require 'underscore'
-Entity = require './services/Entity'
+Entity = require './Entity'
 
 module.exports = (apiResults) ->
 

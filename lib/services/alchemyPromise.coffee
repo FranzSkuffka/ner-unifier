@@ -1,4 +1,4 @@
-Entity  = require './Entity'
+Entity  = require '../Entity'
 Alchemy = require './alchemy'
 mapEntityName = require './map'
 
