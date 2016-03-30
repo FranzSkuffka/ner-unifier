@@ -26,7 +26,8 @@ knwlEntities = (text, opts) ->
         for email in knwlSync.get 'emails'
             if email.preview?
                 meta =
-                    preview:  email.preview
+                    knwl:
+                        preview:  email.preview
             results.push new Entity mapEntityName('emailAddress'), email.address, meta
         resolve results
 

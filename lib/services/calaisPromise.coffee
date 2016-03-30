@@ -11,8 +11,9 @@ calaisEntities = (text, apiKey, opts) ->
             for endpoint, data of result
                 if data._typeGroup == 'entities'
                     meta =
-                        instances: data.instances
-                        relevance: data.relevance
+                        calais:
+                            instances: data.instances
+                            relevance: data.relevance
                     entities.push new Entity mapEntityName(data._type), data.name, meta
             resolve entities
 

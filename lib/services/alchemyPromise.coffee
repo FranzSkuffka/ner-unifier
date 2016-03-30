@@ -8,7 +8,7 @@ alchemyEntities = (text, apiKey, opts) ->
         alchemy.entities "text", text, {'language': opts.language}, (res) ->
             results = []
             for entity in res.entities
-                results.push new Entity mapEntityName(entity.type), entity.text
+                results.push new Entity mapEntityName(entity.type), entity.text, {alchemy: undefined}
             resolve results
 
 module.exports = alchemyEntities 

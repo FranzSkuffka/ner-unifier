@@ -18,10 +18,11 @@ module.exports = (apiResults) ->
     deduplicateEntityList = (entityList, duplicateGroups) ->
         type = entityList[0].type
         for group in duplicateGroups
-            meta = []
+            meta = {}
             value = ''
             for entity, i in group
                 value = entityList[i].value if entityList[i].value.length > value.length
+                meta = _.extend meta, entityList[i].meta
                 delete entityList[i]
             entityList.push new Entity type, value, meta
         return _.compact entityList
