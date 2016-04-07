@@ -19,10 +19,13 @@ knwlEntities = (text, opts) ->
             results.push new Entity mapEntityName('probability'), ratio.percentileValue
 
         for phone in knwlSync.get 'phones'
-            results.push new Entity mapEntityName('phoneNumber'), phone.phone
+            results.push new Entity mapEntityName('phoneNumber'), phone.number, {knwl:{country: phone.country}}
 
-        for phone in knwlSync.get 'links'
-            results.push new Entity mapEntityName('urls'), phone.phone
+        for link in knwlSync.get 'links'
+            results.push new Entity mapEntityName('urls'), link.link
+
+        for website in knwlSync.get 'websites'
+            results.push new Entity mapEntityName('website'), website
 
         for email in knwlSync.get 'emails'
             if email.preview?
