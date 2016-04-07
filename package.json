@@ -21,7 +21,7 @@
     "bluebird": "^3.3.4",
     "calais": "github:gedaiu/node-calais#1ca836a",
     "fuzzymap": "^0.4.1",
-    "knwl.js": "github:franzskuffka/knwl.js",
+    "knwl.js": "github:franzskuffka/Knwl.js#ccd8bbe",
     "underscore": "^1.8.3"
   }
 }

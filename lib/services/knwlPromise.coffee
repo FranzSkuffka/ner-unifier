@@ -6,8 +6,6 @@ Entity = require '../Entity'
 knwlEntities = (text, opts) ->
     new Promise (resolve) ->
         knwlSync    = new Knwl opts.language
-        knwlSync.register 'money', require '../../node_modules/knwl.js/experimental_plugins/money'
-        knwlSync.register 'ratios', require '../../node_modules/knwl.js/experimental_plugins/ratios'
         # load text into knwl
         knwlSync.init text
         # define results in outer scope
@@ -22,6 +20,9 @@ knwlEntities = (text, opts) ->
 
         for phone in knwlSync.get 'phones'
             results.push new Entity mapEntityName('phoneNumber'), phone.phone
+
+        for phone in knwlSync.get 'links'
+            results.push new Entity mapEntityName('urls'), phone.phone
 
         for email in knwlSync.get 'emails'
             if email.preview?

@@ -31,4 +31,6 @@ ner = (text, apiKeys, opts) =>
             entities = postProcess results
             resolve entities
 
+
+ner.Entity = require './Entity'
 module.exports = ner
