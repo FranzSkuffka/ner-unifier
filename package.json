@@ -4,7 +4,7 @@
   "description": "A unified interface for named entity recognition libraries and services",
   "main": "lib/index",
   "scripts": {
-    "test": "coffee test.coffee"
+    "test": "coffee test/test.coffee"
   },
   "repository": {
     "type": "git",

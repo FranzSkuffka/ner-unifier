@@ -1,9 +1,6 @@
-fs = require 'fs'
-ner = require '.'
+ner = require '..'
 
-apiKeys =
-    alchemy: fs.readFileSync('API_keys/alchemy').toString().split('\n')[0]
-    calais: fs.readFileSync('API_keys/calais').toString().split('\n')[0]
+apiKeys = require './API_keys_module'
 
 ner('You do not work for Apple in London, Mr. Anderson hello@anderson.com', apiKeys, {language: 'english'} ).then (res) ->
     console.log()
