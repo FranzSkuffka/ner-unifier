@@ -1,6 +1,11 @@
 mapEntityName = require './map'
 
-Knwl    = require 'knwl.js'
+try
+    Knwl    = require '../../../Knwl.js'
+    console.log 'Using local knwl'
+catch
+    Knwl    = require 'knwl.js'
+
 Entity = require '../Entity'
 
 knwlEntities = (text, opts) ->
